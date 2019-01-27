@@ -43,6 +43,8 @@ function extractFilenames(fileList) {
 function filenamesToCue(fileNames) {
   fileNames = fileNames.slice()
   var firstFile = fileNames.shift()
+  document.getElementById("cuename").value = firstFile.split('.').slice(0, -1).join('.') + '.cue';
+
 
   var sheet =  'FILE "' + firstFile + '" BINARY\n\
   TRACK 01 MODE2/2352\n\
@@ -59,6 +61,19 @@ function filenamesToCue(fileNames) {
   })
 
   return sheet;
+}
+
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }
 
 function padLeadingZero(number) {
