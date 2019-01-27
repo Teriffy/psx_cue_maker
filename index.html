@@ -1,29 +1,62 @@
+<!-- 
+TODO: Cookie Consent
+TODO: ANALYTICS
+TODO: Schema org
+
+
+
+-->
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>PlayStation (PSX) Cue Maker</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="You have bins, but no cue. Salvation is here."/>
-    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="code.js"></script>
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-  <body>
+<html lang="en">
+
+<head>
+  <title>PlayStation (PSX) Cue Genreat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="description" content="Generate .cue for your psx .bins" />
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="code.js"></script>
+  <link href="css/normalize.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+  <div class="container_flex">
+    <h1>Playstation (PSX) cue generator</h1>
+  </div>
+  <div class="container_flex">
+    <div class="description">
+  <p> Create .cue files from .bin or .iso psx</p>
+</div>
+  </div>
+  <div class="container_flex">
     <div id="dropzone" class="dropzone">
-      <div>Drop your .bin files here!</div>
-      <div class="dropzone-tip">Make sure your binfiles are listed in the right track order, when you drag the files onto the dropzone. If the track order is wrong, the cue sheet won't work!</div>
+      <div class="dropzone-header">Drag your files here</div>
+      <div class="dropzone-tip">Make sure you drag your <strong>.bin .iso</strong> files first.</div>
     </div>
+  </div>
+  <div class="container_flex">
     <form onsubmit="download(this['name'].value, this['text'].value)">
-        <input type="hidden" id="cuename" name="name" value="test.cue">
-        <input type="submit" value="Download">
-    <div class="cuesheet-container">
-      <textarea id="cuesheet" name="text" class="cuesheet"></textarea>
+      <input type="hidden" id="cuename" name="name" value="test.cue">
+      <div class="cuesheet-container">
+        <textarea id="cuesheet" name="text" class="cuesheet" placeholder="Here will be your generated .cue file"></textarea>
+      </div>
     </div>
-    </form>
+    <div class="container_flex">
 
-    <footer>
-      Developed in April 2017 by <a href="https://github.com/nielsbuus">Niels Buus</a>
-    </footer>
+      <input type="submit" value="Download .cue file">
+    </div>
+ 
+  </form>
+  <footer>
 
-  </body>
+      Updated by <a href="http://leonenko.cz" title="Evžen Leonenko">Evžen Leonenko</a>. Based on cue maker by  <a href="https://github.com/nielsbuus"> Niels Buus</a>
+  </footer>
+
+
+</body>
+
 </html>
