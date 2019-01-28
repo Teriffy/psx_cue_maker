@@ -1,22 +1,27 @@
 <!-- 
 TODO: Cookie Consent
-TODO: ANALYTICS
 TODO: Schema org
 
+FIXME:TEXT 
+FIXME: LOGO
+FIXME: Header
 
 
+cuegenerator.teriffy.cz
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>PlayStation (PSX) Cue Genreat</title>
+  <title>PlayStation (PSX) .cue generator</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="authors" content="Evžen Leonenko, Niels Buus">
+  <meta name="robots" content="index, follow">
 
-  <meta name="description" content="Generate .cue for your psx .bins" />
+  <meta name="description" content="Cue generator is a onlinw web-based tool to create cue files from PSX bins or isos. Generate cues from multiple bins and download straight to your computer." />
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/code.js"></script>
   <link href="css/normalize.css" rel="stylesheet" type="text/css" media="all">
@@ -38,6 +43,23 @@ TODO: Schema org
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#e9eaee"
+    },
+    "button": {
+      "background": "#1ba1a4"
+    }
+  },
+  "theme": "edgeless",
+  "position": "bottom-right"
+})});
+</script>
 </head>
 <body>
 
@@ -64,7 +86,7 @@ TODO: Schema org
     </div>
     <div class="container_flex">
 
-      <input type="submit" value="Download .cue file">
+      <input type="submit" value="Download .cue file" id="dlbutton" disabled="disabled">
     </div>
  
   </form>
@@ -73,6 +95,15 @@ TODO: Schema org
       Updated by <a href="http://leonenko.cz" title="Evžen Leonenko">Evžen Leonenko</a> - <a href="mailto:psx@leonenko.cz">Contact me</a>. Based on cue maker by  <a href="https://github.com/nielsbuus"> Niels Buus</a>
   </footer>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-54503328-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-54503328-3');
+</script>
 
 </body>
 

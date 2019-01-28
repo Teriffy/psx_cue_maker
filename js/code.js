@@ -59,7 +59,7 @@ function filenamesToCue(fileNames) {
 "
     trackCounter++
   })
-
+  document.getElementById('dlbutton').disabled = false;
   return sheet;
 }
 

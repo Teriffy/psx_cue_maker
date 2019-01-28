@@ -117,7 +117,12 @@ input[type=submit]:focus {
 input[type=submit]:active {
     transform: scale(0.99);
 }
-/* Button styles end */
+
+input[type=submit]:disabled {
+  background: #4d4d4d;
+  cursor: no-drop; 
+}
+
 
 footer {
   margin: 2em;
